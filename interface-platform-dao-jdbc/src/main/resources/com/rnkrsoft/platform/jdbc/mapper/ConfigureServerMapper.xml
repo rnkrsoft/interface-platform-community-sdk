@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.rnkrsoft.platform.jdbc.dao.ConfigureServerDAO">
+    <resultMap id="BaseResultMap" type="com.rnkrsoft.platform.jdbc.entity.ConfigureServerEntity">
+        <!-- 服务器唯一标识 -->
+        <id column="SERVER_NO" property="serverNo" jdbcType="VARCHAR" />
+        <!-- 环境 -->
+        <result column="ENV" property="env" jdbcType="VARCHAR" />
+        <!-- 渠道 -->
+        <result column="CHANNEL" property="channel" jdbcType="VARCHAR" />
+        <!-- 服务器描述 -->
+        <result column="SERVER_DESC" property="serverDesc" jdbcType="VARCHAR" />
+        <!-- 服务器地址 -->
+        <result column="SERVER_ADDRESS" property="serverAddress" jdbcType="VARCHAR" />
+        <!-- 服务器端口号 -->
+        <result column="SERVER_PORT" property="serverPort" jdbcType="INTEGER" />
+        <!-- 服务器上下文路径 -->
+        <result column="SERVER_CONTEXT_PATH" property="serverContextPath" jdbcType="VARCHAR" />
+        <!-- 是否为HTTPS -->
+        <result column="HTTPS" property="https" jdbcType="TINYINT" />
+        <!-- 优先级 -->
+        <result column="PRIORITY" property="priority" jdbcType="INTEGER" />
+        <!-- 是否启用 -->
+        <result column="ENABLED" property="enabled" jdbcType="TINYINT" />
+        <!-- 创建日期 -->
+        <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+        <!-- 更新日期 -->
+        <result column="LAST_UPDATE_DATE" property="lastUpdateDate" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        SERVER_NO, ENV, CHANNEL, SERVER_DESC, SERVER_ADDRESS, SERVER_PORT, SERVER_CONTEXT_PATH, HTTPS, PRIORITY, ENABLED, CREATE_DATE, LAST_UPDATE_DATE
+    </sql>
+    <select id="selectServerByEnvChannels" resultMap="BaseResultMap">
+       SELECT
+          <include refid="Base_Column_List"/>
+        FROM
+          TB_CONFIGURE_SERVER
+        WHERE ENV = ${env}
+        AND ENABLED = 1
+        AND CHANNEL IN
+        <foreach collection="channels" item="channel" index="index" open="(" close=")" separator=",">
+            #{channel}
+        </foreach>
+    </select>
+</mapper>

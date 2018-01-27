@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="com.rnkrsoft.platform.mongo.service.MongoMessageService"/>
+    <bean class="com.rnkrsoft.framework.orm.mongo.spring.MongoScannerConfigurer">
+        <property name="basePackages">
+            <array>
+                <value>com.rnkrsoft.platform.mongo.dao</value>
+            </array>
+        </property>
+        <property name="schema" value="demo"/>
+        <property name="connectionUri" value="mongodb://192.168.0.111:3017/demo?maxPoolSize=20&amp;readPreference=secondaryPreferred"/>
+        <property name="mongoInterface" value="com.rnkrsoft.framework.orm.mongo.MongoInterface"/>
+    </bean>
+</beans>
