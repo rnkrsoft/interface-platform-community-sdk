@@ -1,4 +1,4 @@
-#接口平台
+# 接口平台
 
 [![Maven central](https://maven-badges.herokuapp.com/maven-central/com.rnkrsoft.platform/interface-platform-standalone/badge.svg)](http://search.maven.org/#search|ga|1|g%3A%22com.rnkrsoft.platform%22%20AND%20a%3A%22interface-platform-standalone%22)
 
@@ -10,17 +10,17 @@
 </dependency>
 ```
 
-# 接口平台的开发目的
+## 接口平台的开发目的
 
 用于解决一个组织内外的通信问题，并将通信过程进行记录，用于进行相关的行为分析。
 
-# 接口平台场景
+## 接口平台场景
 
 1. 外部系统请求一个对外暴露服务的内部系统
 
 2. 内部系统主动请求一个外部系统
 
-#通信方式
+## 通信方式
 
 1. 同步通信
 
@@ -31,14 +31,14 @@
    1. 请求后直接返回，并不应答
    2. 处理完成后进行应答
 
-#幂等性
+## 幂等性
 
 1. 在通信过程中同一个标识的请求可进行多次请求，保证有相同的结果返回
 
 
-#流程
+# 流程
 
-##外部请求内部系统
+## 外部请求内部系统
 
 com.rnkrsoft.platform.InnerInterfaceEngine
 1. 验证交易码是否为空
@@ -85,4 +85,10 @@ com.rnkrsoft.platform.OuterInterfaceEngine
 10. 创建应答记录
 11. 根据innerObject应答码更新请求记录
 12. 返回innerObject对象
+
+
+
+# 搭建
+
+访问https://github.com/rnkrsoft/interface-platform-sdk-demo下载使用Demo快速搭建例子
 
