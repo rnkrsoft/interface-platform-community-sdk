@@ -5,6 +5,7 @@ import com.rnkrsoft.logtrace4j.ErrorContextFactory;
 
 /**
  * Created by rnkrsoft.com on 2018/6/19.
+ * 接口所处阶段
  */
 public enum InterfaceStageEnum implements EnumStringCode {
     REQUEST("REQUEST", "请求"),

@@ -5,6 +5,7 @@ import com.rnkrsoft.logtrace4j.ErrorContextFactory;
 
 /**
  * Created by rnkrsoft.com on 2018/6/19.
+ * 应答类型
  */
 public enum RspTypeEnum implements EnumIntegerCode {
     SYNC_RESPONSE(1, "同步应答"),

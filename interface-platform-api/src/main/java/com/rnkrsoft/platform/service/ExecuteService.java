@@ -4,7 +4,7 @@ import com.rnkrsoft.platform.InterfaceContext;
 
 /**
  * Created by rnkrsoft.com on 2018/6/24.
- * 执行服务
+ * 执行服务，用于内部接口服务的调用
  */
 public interface ExecuteService {
     /**

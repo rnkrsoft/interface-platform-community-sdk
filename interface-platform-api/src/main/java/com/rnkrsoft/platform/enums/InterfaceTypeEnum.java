@@ -5,6 +5,7 @@ import com.rnkrsoft.logtrace4j.ErrorContextFactory;
 
 /**
  * Created by rnkrsoft.com on 2018/6/19.
+ * 接口类型
  */
 public enum InterfaceTypeEnum implements EnumStringCode {
     SYNC("SYNC", "同步"),

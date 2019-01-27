@@ -5,6 +5,7 @@ import com.rnkrsoft.logtrace4j.ErrorContextFactory;
 
 /**
  * Created by rnkrsoft.com on 2018/6/19.
+ * 接口信息记录状态
  */
 public enum OrderStatusEnum implements EnumIntegerCode {
     SENT(0, "已发送"),

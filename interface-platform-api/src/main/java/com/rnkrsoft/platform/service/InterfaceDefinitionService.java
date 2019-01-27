@@ -4,6 +4,7 @@ import com.rnkrsoft.platform.InterfaceContext;
 
 /**
  * Created by rnkrsoft.com on 2018/6/25.
+ * 接口定义服务
  */
 public interface InterfaceDefinitionService {
     /**

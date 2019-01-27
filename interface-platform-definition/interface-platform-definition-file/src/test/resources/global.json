@@ -1,0 +1,7 @@
+{
+  "password": "1234567890",
+  "keyVector": "1234567890654321",
+  "channels": [
+    "public"
+  ]
+}

@@ -4,6 +4,7 @@ import com.rnkrsoft.platform.InterfaceContext;
 
 /**
  * Created by rnkrsoft.com on 2018/6/23.
+ * 接口引擎，无论是内部接口还是外部接口均执行这个接口的实现服务
  */
 public interface InterfaceEngine {
     /**

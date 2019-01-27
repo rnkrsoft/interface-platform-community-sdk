@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <groupId>com.rnkrsoft.platform</groupId>
-    <artifactId>interface-platform-sdk</artifactId>
-    <version>1.0.1</version>
+    <artifactId>interface-platform-community-sdk</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
     <name>接口平台SDK</name>
     <properties>
         <maven.compiler.target>1.6</maven.compiler.target>
@@ -14,6 +14,7 @@
         <java.version>1.6</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <interface-platform-protocol.version>1.0.1</interface-platform-protocol.version>
         <junit.version>4.12</junit.version>
         <commons-codec.version>1.9</commons-codec.version>
         <bcprov-jdk16.version>1.46</bcprov-jdk16.version>
@@ -34,17 +35,14 @@
         <commons-dbcp.version>1.2.2</commons-dbcp.version>
         <gson.version>2.2.4</gson.version>
         <mybatis.version>3.3.0</mybatis.version>
-        <mysql-connector-java.version>6.0.6</mysql-connector-java.version>
-        <framework.version>1.0.0</framework.version>
+        <mysql-connector-java.version>5.1.39</mysql-connector-java.version>
     </properties>
     <modules>
-        <module>interface-platform-protocol</module>
         <module>interface-platform-api</module>
-        <module>interface-platform-dao-cache</module>
-        <module>interface-platform-dao-jdbc</module>
-        <module>interface-platform-dao-mongo</module>
+        <module>interface-platform-message</module>
+        <module>interface-platform-token</module>
+        <module>interface-platform-definition</module>
         <module>interface-platform-core</module>
-        <module>interface-platform-ipdb</module>
         <module>interface-platform-web</module>
         <module>interface-platform-standalone</module>
     </modules>
@@ -57,45 +55,10 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>log4j-over-slf4j</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
-        </dependency>
-        <!--Apache Commons Logging instead of slf4j logger -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-        </dependency>
-        <!--java util logger insteas of slf4j logger -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jul-to-slf4j</artifactId>
-        </dependency>
         <!--slf4j logger api-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <!--异步写入框架-->
-        <dependency>
-            <groupId>com.lmax</groupId>
-            <artifactId>disruptor</artifactId>
         </dependency>
     </dependencies>
     <dependencyManagement>
@@ -104,52 +67,48 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector-java.version}</version>
-                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>com.rnkrsoft.platform</groupId>
+                <artifactId>interface-platform-protocol</artifactId>
+                <version>${interface-platform-protocol.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-api</artifactId>
                 <version>${log4j2.version}</version>
-                <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-core</artifactId>
                 <version>${log4j2.version}</version>
-                <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-web</artifactId>
                 <version>${log4j2.version}</version>
-                <optional>true</optional>
             </dependency>
-
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>log4j-over-slf4j</artifactId>
                 <version>${log4j-over-slf4j.version}</version>
-                <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-slf4j-impl</artifactId>
                 <version>${log4j2.version}</version>
-                <optional>true</optional>
             </dependency>
             <!--Apache Commons Logging instead of slf4j logger -->
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>jcl-over-slf4j</artifactId>
                 <version>${slf4j.version}</version>
-                <optional>true</optional>
             </dependency>
             <!--java util logger insteas of slf4j logger -->
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>jul-to-slf4j</artifactId>
                 <version>${slf4j.version}</version>
-                <optional>true</optional>
             </dependency>
             <!--slf4j logger api-->
             <dependency>
@@ -162,48 +121,41 @@
                 <groupId>com.lmax</groupId>
                 <artifactId>disruptor</artifactId>
                 <version>${disruptor.version}</version>
-                <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>com.rnkrsoft.groundwork</groupId>
                 <artifactId>groundwork</artifactId>
                 <version>${groundwork.version}</version>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>com.rnkrsoft.skeleton4j</groupId>
                 <artifactId>skeleton4j-validator</artifactId>
                 <version>${skeleton4j-validator.version}</version>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>com.rnkrsoft.skeleton4j</groupId>
                 <artifactId>skeleton4j-api</artifactId>
                 <version>${skeleton4j-api.version}</version>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>com.rnkrsoft.logtrace4j</groupId>
                 <artifactId>logtrace4j</artifactId>
                 <version>${logtrace4j.version}</version>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.12</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.rnkrsoft.framework</groupId>
-                <artifactId>framework-standalone</artifactId>
-                <version>${framework.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.rnkrsoft.framework</groupId>
-                <artifactId>framework-test-standalone</artifactId>
-                <version>${framework.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -254,91 +206,7 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
-                <artifactId>spring-context-support</artifactId>
-                <version>${spring.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-aop</artifactId>
-                <version>${spring.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-tx</artifactId>
-                <version>${spring.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-orm</artifactId>
-                <version>${spring.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-jdbc</artifactId>
-                <version>${spring.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-web</artifactId>
-                <version>${spring.version}</version>
-                <scope>provided</scope>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.slf4j</groupId>
-                        <artifactId>slf4j-api</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.slf4j</groupId>
-                        <artifactId>slf4j-log4j12</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>commons-logging</artifactId>
-                        <groupId>commons-logging</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>log4j</groupId>
-                        <artifactId>log4j</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-webmvc</artifactId>
-                <version>${spring.version}</version>
-                <scope>provided</scope>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.slf4j</groupId>
-                        <artifactId>slf4j-api</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.slf4j</groupId>
-                        <artifactId>slf4j-log4j12</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>commons-logging</artifactId>
-                        <groupId>commons-logging</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>log4j</groupId>
-                        <artifactId>log4j</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
                 <artifactId>spring-expression</artifactId>
-                <version>${spring.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-messaging</artifactId>
                 <version>${spring.version}</version>
                 <scope>provided</scope>
             </dependency>
@@ -370,6 +238,12 @@
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis</artifactId>
                 <version>${mybatis.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.1.0</version>
                 <scope>provided</scope>
             </dependency>
         </dependencies>
@@ -439,6 +313,10 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
             <plugin>
@@ -454,4 +332,22 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>rnkrsoft</id>
+            <name>rnkrsoft repository</name>
+            <url>http://nexus.rnkrsoft.com/content/groups/public/</url>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>open-source-snapshots</id>
+            <url>http://nexus.rnkrsoft.com/content/repositories/open-source-snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>open-source-releases</id>
+            <url>http://nexus.rnkrsoft.com/content/repositories/open-source-releases/</url>
+        </repository>
+    </distributionManagement>
 </project>

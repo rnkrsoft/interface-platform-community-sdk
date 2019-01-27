@@ -6,7 +6,7 @@ import javax.web.doc.annotation.ApidocElement;
 import java.io.Serializable;
 
 /**
- * Created by Administrator on 2018/6/19.
+ * Created by rnkrsoft.com on 2018/6/19.
  */
 @Data
 @Builder

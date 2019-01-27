@@ -1,7 +1,7 @@
 package com.rnkrsoft.platform;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.rnkrsoft.com.google.gson.Gson;
+import com.rnkrsoft.com.google.gson.GsonBuilder;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;

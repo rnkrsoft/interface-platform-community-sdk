@@ -10,29 +10,32 @@ import com.rnkrsoft.platform.InterfaceData;
 public interface SecurityService {
     /**
      * 生成签字
-     * @param context
+     * @param context 上下文
      * @param data 数据
-     * @return 通过返回真
+     * @return 成功返回真
      */
     boolean sign(InterfaceContext context, InterfaceData data);
     /**
      * 验证签字
+     * @param context 上下文
      * @param data 数据
-     * @return 通过返回真
+     * @return 成功返回真
      */
     boolean verify(InterfaceContext context, InterfaceData data);
 
     /**
      * 加密数据
+     * @param context 上下文
      * @param data 数据
-     * @return 加密成功返回真
+     * @return 成功返回真
      */
     boolean encrypt(InterfaceContext context, InterfaceData data);
 
     /**
      * 解密数据
+     * @param context 上下文
      * @param data 数据
-     * @return 解密成功返回真
+     * @return 成功返回真
      */
     boolean decrypt(InterfaceContext context, InterfaceData data);
 }

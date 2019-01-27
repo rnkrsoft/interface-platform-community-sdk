@@ -1,5 +1,10 @@
 package com.rnkrsoft.platform.annotation;
 
+import com.rnkrsoft.platform.service.InterfaceDefinitionService;
+import com.rnkrsoft.platform.service.InterfaceEngine;
+import com.rnkrsoft.platform.service.MessageService;
+import com.rnkrsoft.platform.service.SyncSendService;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -27,20 +32,20 @@ public @interface InterfaceSender {
      * 接口定义服务类
      * @return 接口定义服务类
      */
-    String interfaceDefinitionServiceClassName() default "";
+    Class<InterfaceDefinitionService> interfaceDefinitionServiceClass() default InterfaceDefinitionService.class;
     /**
      * 消息服务类
      * @return 消息服务类
      */
-    String  messageServiceClassName() default  "";
+    Class<MessageService>  messageServiceClass() default  MessageService.class;
     /**
      * 接口引擎类
      * @return 引擎类
      */
-    String interfaceEngineClassName() default "";
+    Class<InterfaceEngine> interfaceEngineClass() default InterfaceEngine.class;
     /**
      * 同步发送服务
      * @return 同步发送服务
      */
-    String syncSendServiceClassName() default "";
+    Class<SyncSendService> syncSendServiceClass() default SyncSendService.class;
 }

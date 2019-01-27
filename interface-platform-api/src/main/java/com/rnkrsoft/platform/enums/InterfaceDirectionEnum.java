@@ -5,6 +5,7 @@ import com.rnkrsoft.logtrace4j.ErrorContextFactory;
 
 /**
  * Created by rnkrsoft.com on 2018/6/19.
+ * 接口方向
  */
 public enum InterfaceDirectionEnum implements EnumStringCode {
     INNER("INNER", "内部调用"),

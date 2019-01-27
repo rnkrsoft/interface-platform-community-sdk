@@ -4,6 +4,7 @@ import com.rnkrsoft.interfaces.EnumStringCode;
 
 /**
  * Created by rnkrsoft.com on 2018/6/19.
+ * 接口信息记录方式
  */
 public enum WriteModeEnum implements EnumStringCode {
     SYNC("SYNC", "同步"),

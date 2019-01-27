@@ -14,6 +14,7 @@ import static com.rnkrsoft.platform.InterfacePlatformConstants.PUBLIC_CHANNEL;
 
 /**
  * Created by rnkrsoft.com on 2018/6/24.
+ * 接口定义信息，用于服务器端对接口的定义
  */
 @Data
 @Builder
