@@ -1,4 +1,15 @@
 #接口平台
+
+[![Maven central](https://maven-badges.herokuapp.com/maven-central/com.rnkrsoft.platform/interface-platform-standalone/badge.svg)](http://search.maven.org/#search|ga|1|g%3A%22com.rnkrsoft.platform%22%20AND%20a%3A%22interface-platform-standalone%22)
+
+```xml
+<dependency>
+    <groupId>com.rnkrsoft.platform</groupId>
+    <artifactId>interface-platform-standalone</artifactId>
+    <version>最新版本号</version>
+</dependency>
+```
+
 # 接口平台的开发目的
 
 用于解决一个组织内外的通信问题，并将通信过程进行记录，用于进行相关的行为分析。
