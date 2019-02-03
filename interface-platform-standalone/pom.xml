@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.rnkrsoft.platform</groupId>
     <artifactId>interface-platform-standalone</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>Rnkrsoft Interface Platform Community Edition</name>
     <description>Rnkrsoft Interface Platform Community Edition</description>
     <url>https://github.com/rnkrsoft/interface-platform.git</url>
@@ -135,6 +135,7 @@
                                     <include>com.rnkrsoft.platform:interface-platform-dao-cache</include>
                                     <include>com.rnkrsoft.platform:interface-platform-dao-jdbc</include>
                                     <include>com.rnkrsoft.platform:interface-platform-dao-mongo</include>
+                                    <include>com.rnkrsoft.platform:interface-platform-ipdb</include>
                                     <include>com.rnkrsoft.platform:interface-platform-core</include>
                                     <include>com.rnkrsoft.platform:interface-platform-web</include>
                                 </includes>

@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
     <groupId>com.rnkrsoft.platform</groupId>
     <artifactId>interface-platform-sdk</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>接口平台SDK</name>
     <properties>
         <maven.compiler.target>1.6</maven.compiler.target>
@@ -38,7 +38,6 @@
         <framework.version>1.0.0</framework.version>
     </properties>
     <modules>
-        <module>interface-platform-protocol</module>
         <module>interface-platform-api</module>
         <module>interface-platform-dao-cache</module>
         <module>interface-platform-dao-jdbc</module>
@@ -371,6 +370,11 @@
                 <artifactId>mybatis</artifactId>
                 <version>${mybatis.version}</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.rnkrsoft.platform</groupId>
+                <artifactId>interface-platform-protocol</artifactId>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

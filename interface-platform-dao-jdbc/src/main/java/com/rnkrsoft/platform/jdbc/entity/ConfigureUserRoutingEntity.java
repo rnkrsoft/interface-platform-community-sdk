@@ -5,6 +5,8 @@ import com.rnkrsoft.framework.orm.PrimaryKeyStrategy;
 import com.rnkrsoft.framework.orm.jdbc.*;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Table(name = "CONFIGURE_USER_ROUTING",prefix = "TB")
 @Comment("配置用户路由信息")
 @Data
@@ -65,6 +67,14 @@ public class ConfigureUserRoutingEntity extends BaseEntity {
     @Comment("环境，关联配置环境表")
     @NumberColumn(name = "ENV", nullable = false)
     Integer env;
+
+    @Comment("模拟经度")
+    @NumberColumn(name = "MOCK_LNG", nullable = false, defaultValue = "0")
+    BigDecimal mockLng;
+
+    @Comment("模拟纬度")
+    @NumberColumn(name = "MOCK_LAT", nullable = false, defaultValue = "0")
+    BigDecimal mockLat;
 
     @Comment("优先级")
     @NumberColumn(name = "PRIORITY", nullable = false, defaultValue = "1")
