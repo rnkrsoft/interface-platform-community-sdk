@@ -114,7 +114,7 @@ public class ApiController {
         try {
             request = GSON.fromJson(json, ApiRequest.class);
         } catch (JsonSyntaxException e) {
-            log.error("请求JSON 无效");
+            log.error("request json is illegal!");
             response.setCode(InterfaceRspCode.REQUEST_DATA_IS_NULL);
             String rspJson = GSON.toJson(response);
             log.error("response json:{}", rspJson);
@@ -140,7 +140,7 @@ public class ApiController {
         Date date = DateUtils.toDate(request.getTimestamp());
         long ts = date.getTime();
         if (System.currentTimeMillis() - ts > TIMEOUT || ts - System.currentTimeMillis() > TIMEOUT) {
-            log.error("请求时间{}与服务器时间{}不一致", request.getTimestamp(), DateUtils.getCurrFullTime());
+            log.error("the difference between request time '{}' and server time '{}' is more than '{}s'!", request.getTimestamp(), DateUtils.getTimestamp(), TIMEOUT);
             response.setCode(InterfaceRspCode.TIMESTAMP_ILLEGAL);
             String rspJson = GSON.toJson(response);
             log.error("response json:{}", rspJson);
