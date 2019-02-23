@@ -18,8 +18,8 @@
         <commons-codec.version>1.9</commons-codec.version>
         <bcprov-jdk16.version>1.46</bcprov-jdk16.version>
         <lombok.version>1.16.12</lombok.version>
-        <skeleton4j-api.version>1.0.1</skeleton4j-api.version>
-        <skeleton4j-validator.version>1.0.1</skeleton4j-validator.version>
+        <skeleton4j-api.version>1.0.2</skeleton4j-api.version>
+        <skeleton4j-validator.version>1.0.2</skeleton4j-validator.version>
         <groundwork.version>1.0.1</groundwork.version>
         <logtrace4j.version>1.0.1</logtrace4j.version>
         <commons-codec.version>1.9</commons-codec.version>
