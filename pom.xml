@@ -42,6 +42,7 @@
         <module>interface-platform-dao-cache</module>
         <module>interface-platform-dao-jdbc</module>
         <module>interface-platform-dao-mongo</module>
+        <module>interface-platform-dao-messagequeue</module>
         <module>interface-platform-core</module>
         <module>interface-platform-ipdb</module>
         <module>interface-platform-web</module>
