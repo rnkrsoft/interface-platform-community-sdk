@@ -377,7 +377,7 @@ import static com.rnkrsoft.platform.InterfacePlatformConstants.SESSION_ID;
 @Controller
 public class ApiController {
 
-    static final int SECOND = 60 * 1000;
+    static final int SECOND = 1000;
     static final int MINUTE = 60 * SECOND;
     static final int TIMEOUT = 5 * MINUTE;
 
