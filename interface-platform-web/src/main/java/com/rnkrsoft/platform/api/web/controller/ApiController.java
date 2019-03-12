@@ -381,7 +381,7 @@ public class ApiController {
     static final int MINUTE = 60 * SECOND;
     static final int TIMEOUT = 5 * MINUTE;
 
-    static Gson GSON = new GsonBuilder().serializeNulls().create();
+    static Gson GSON = new GsonBuilder().create();
     @Autowired
     InterfaceService interfaceService;
 

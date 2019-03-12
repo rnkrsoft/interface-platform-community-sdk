@@ -350,6 +350,7 @@ import com.rnkrsoft.platform.jdbc.entity.ConfigureServerEntity;
 import com.rnkrsoft.platform.jdbc.entity.ConfigureUserRoutingEntity;
 import com.rnkrsoft.platform.protocol.enums.InterfaceRspCode;
 import com.rnkrsoft.platform.protocol.service.*;
+import com.rnkrsoft.utils.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
@@ -415,9 +416,12 @@ public class MySQLConfigureServiceImpl implements ConfigureService {
                 .verboseLog(configureUserRoutingEntity.getVerboseLog())
                 .autoLocate(configureUserRoutingEntity.getAutoLocate())
                 .keyVector(configureUserRoutingEntity.getKeyVector())
-                .asyncExecuteThreadPoolSize(configureUserRoutingEntity.getAsyncExecuteThreadPoolSize())
-                .mockLng(configureUserRoutingEntity.getMockLng().toString())
-                .mockLat(configureUserRoutingEntity.getMockLat().toString());
+                .asyncExecuteThreadPoolSize(configureUserRoutingEntity.getAsyncExecuteThreadPoolSize());
+        //如果不自动定位，则使用模拟定位数据
+        if (!configureUserRoutingEntity.getAutoLocate()) {
+            builder.mockLng(StringUtils.safeToString(configureUserRoutingEntity.getMockLng(), "0"))
+                    .mockLat(StringUtils.safeToString(configureUserRoutingEntity.getMockLat(), "0"));
+        }
         FetchConfigureResponse response = builder.build();
         Map<String, List<GatewayAddress>> gatewayAddresses = new HashMap();
         List<ConfigureServerEntity> configureServerEntities = configureServerDAO.selectServerByEnvChannels(configureUserRoutingEntity.getEnv(), request.getChannels());

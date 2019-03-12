@@ -370,7 +370,7 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class ConfigureController {
 
-    static Gson GSON = new GsonBuilder().serializeNulls().create();
+    static Gson GSON = new GsonBuilder().create();
 
     @Autowired
     ConfigureService configureService;
