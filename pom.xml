@@ -18,9 +18,9 @@
         <commons-codec.version>1.9</commons-codec.version>
         <bcprov-jdk16.version>1.46</bcprov-jdk16.version>
         <lombok.version>1.16.12</lombok.version>
-        <skeleton4j-api.version>1.0.2</skeleton4j-api.version>
+        <skeleton4j-api.version>1.0.2-SNAPSHOT</skeleton4j-api.version>
         <skeleton4j-validator.version>1.0.2</skeleton4j-validator.version>
-        <groundwork.version>1.0.1</groundwork.version>
+        <groundwork.version>1.0.2</groundwork.version>
         <logtrace4j.version>1.0.1</logtrace4j.version>
         <commons-codec.version>1.9</commons-codec.version>
         <bcprov-jdk16.version>1.46</bcprov-jdk16.version>
@@ -30,7 +30,7 @@
         <gson.version>2.2.4</gson.version>
         <mybatis.version>3.3.0</mybatis.version>
         <mysql-connector-java.version>6.0.6</mysql-connector-java.version>
-        <framework.version>1.0.0</framework.version>
+        <framework.version>1.0.1</framework.version>
     </properties>
     <modules>
         <module>interface-platform-api</module>
