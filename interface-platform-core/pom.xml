@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.rnkrsoft.platform</groupId>
         <artifactId>interface-platform-sdk</artifactId>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
     </parent>
     <artifactId>interface-platform-core</artifactId>
     <name>接口平台核心</name>

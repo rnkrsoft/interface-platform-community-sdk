@@ -6,31 +6,30 @@
     <packaging>pom</packaging>
     <groupId>com.rnkrsoft.platform</groupId>
     <artifactId>interface-platform-sdk</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <name>接口平台SDK</name>
     <properties>
         <maven.compiler.target>1.6</maven.compiler.target>
         <maven.compiler.source>1.6</maven.compiler.source>
-        <java.version>1.6</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <junit.version>4.12</junit.version>
         <commons-codec.version>1.9</commons-codec.version>
         <bcprov-jdk16.version>1.46</bcprov-jdk16.version>
         <lombok.version>1.16.12</lombok.version>
-        <skeleton4j-api.version>1.0.2-SNAPSHOT</skeleton4j-api.version>
-        <skeleton4j-validator.version>1.0.2</skeleton4j-validator.version>
-        <groundwork.version>1.0.2</groundwork.version>
+        <skeleton4j.version>1.0.2</skeleton4j.version>
+        <groundwork.version>1.0.3</groundwork.version>
         <logtrace4j.version>1.0.1</logtrace4j.version>
         <commons-codec.version>1.9</commons-codec.version>
         <bcprov-jdk16.version>1.46</bcprov-jdk16.version>
-        <spring.version>4.3.7.RELEASE</spring.version>
+        <spring.version>4.3.24.RELEASE</spring.version>
         <h2.version>1.4.189</h2.version>
         <commons-dbcp.version>1.2.2</commons-dbcp.version>
-        <gson.version>2.2.4</gson.version>
+        <gson.version>2.6.2</gson.version>
         <mybatis.version>3.3.0</mybatis.version>
         <mysql-connector-java.version>6.0.6</mysql-connector-java.version>
-        <framework.version>1.0.1</framework.version>
+        <framework.version>1.0.2</framework.version>
+        <logger4j.version>1.0.0</logger4j.version>
     </properties>
     <modules>
         <module>interface-platform-api</module>
@@ -54,11 +53,15 @@
         <dependency>
             <groupId>com.rnkrsoft.logger4j</groupId>
             <artifactId>logger4j</artifactId>
-            <version>1.0.0</version>
         </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.rnkrsoft.logger4j</groupId>
+                <artifactId>logger4j</artifactId>
+                <version>${logger4j.version}</version>
+            </dependency>
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
@@ -73,12 +76,12 @@
             <dependency>
                 <groupId>com.rnkrsoft.skeleton4j</groupId>
                 <artifactId>skeleton4j-validator</artifactId>
-                <version>${skeleton4j-validator.version}</version>
+                <version>${skeleton4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.rnkrsoft.skeleton4j</groupId>
                 <artifactId>skeleton4j-api</artifactId>
-                <version>${skeleton4j-api.version}</version>
+                <version>${skeleton4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.rnkrsoft.logtrace4j</groupId>

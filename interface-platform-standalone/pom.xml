@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.rnkrsoft.platform</groupId>
     <artifactId>interface-platform-standalone</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <name>Rnkrsoft Interface Platform Community Edition</name>
     <description>Rnkrsoft Interface Platform Community Edition</description>
     <url>https://github.com/rnkrsoft/interface-platform.git</url>
