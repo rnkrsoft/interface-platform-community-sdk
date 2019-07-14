@@ -382,6 +382,10 @@ public class InterfaceDefinitionEntity extends BaseEntity implements Serializabl
     @StringColumn(name = "CHANNEL", nullable = false, type = StringType.VARCHAR, defaultValue = "public")
     String channel;
 
+    @Comment("接口描述")
+    @StringColumn(name = "INTERFACE_DESC", nullable = true, type = StringType.TEXT)
+    String interfaceDesc;
+
     @Comment("接口类型")
     @StringColumn(name = "INTERFACE_TYPE", nullable = false, type = StringType.VARCHAR, enumClass = InterfaceTypeEnum.class, defaultValue = "SYNC")
     String interfaceType;
@@ -437,10 +441,6 @@ public class InterfaceDefinitionEntity extends BaseEntity implements Serializabl
     @Comment("首先校验然后解密")
     @NumberColumn(name = "FIRST_VERIFY_SECOND_DECRYPT", nullable = false, defaultValue = "1")
     Boolean firstVerifySecondDecrypt;
-
-    @Comment("接口描述")
-    @StringColumn(name = "INTERFACE_DESC", nullable = true, type = StringType.TEXT)
-    String interfaceDesc;
 
     @Comment("是否校验TOKEN")
     @NumberColumn(name = "VALIDATE_TOKEN", nullable = true, defaultValue = "1")
