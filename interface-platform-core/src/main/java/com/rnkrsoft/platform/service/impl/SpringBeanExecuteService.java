@@ -412,6 +412,11 @@ public class SpringBeanExecuteService implements ExecuteService, InitializingBea
             SessionIdWritable sessionIdWritable = (SessionIdWritable) request;
             sessionIdWritable.setSessionId(context.getSessionId());
         }
+        //设置Token到请求中
+        if (request instanceof TokenWritable || request instanceof TokenAble) {
+            TokenWritable tokenWritable = (TokenWritable) request;
+            tokenWritable.setToken(context.getToken());
+        }
         //将用户号和用户姓名设置到对象中
         if (request instanceof UserInfoWritable || request instanceof UserInfoAble) {
             UserInfoWritable userInfoWritable = (UserInfoWritable) request;
