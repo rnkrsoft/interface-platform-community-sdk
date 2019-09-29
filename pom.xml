@@ -17,7 +17,7 @@
         <commons-codec.version>1.9</commons-codec.version>
         <bcprov-jdk16.version>1.46</bcprov-jdk16.version>
         <lombok.version>1.16.12</lombok.version>
-        <skeleton4j.version>1.0.2-SNAPSHOT</skeleton4j.version>
+        <skeleton4j.version>1.0.2</skeleton4j.version>
         <groundwork.version>1.0.3</groundwork.version>
         <logtrace4j.version>1.0.1</logtrace4j.version>
         <commons-codec.version>1.9</commons-codec.version>
@@ -237,12 +237,6 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-expression</artifactId>
-                <version>${spring.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-messaging</artifactId>
                 <version>${spring.version}</version>
                 <scope>provided</scope>
             </dependency>
