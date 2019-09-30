@@ -11,11 +11,10 @@
 ```
 
 # 文档
-[WIKI](https://github.com/rnkrsoft/interface-platform-community-sdk/wiki)
+详细文档访问[WIKI](https://github.com/rnkrsoft/interface-platform-community-sdk/wiki)获取全面的介绍。
 
 
 # 搭建
 
-访问[interface-platform-sdk-demo](https://github.com/rnkrsoft/interface-platform-sdk-demo)
-下载使用Demo快速搭建例子.
+访问[interface-platform-sdk-demo](https://github.com/rnkrsoft/interface-platform-sdk-demo)下载使用Demo快速搭建例子。
 
