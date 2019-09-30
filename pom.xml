@@ -82,6 +82,12 @@
                 <groupId>com.rnkrsoft.skeleton4j</groupId>
                 <artifactId>skeleton4j-api</artifactId>
                 <version>${skeleton4j.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.rnkrsoft.reflection4j</groupId>
+                        <artifactId>reflection4j</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>com.rnkrsoft.logtrace4j</groupId>

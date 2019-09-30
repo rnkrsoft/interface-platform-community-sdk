@@ -11,8 +11,8 @@
     <url>https://github.com/rnkrsoft/interface-platform.git</url>
     <licenses>
         <license>
-            <name>RNKRSOFT OPEN SOURCE SOFTWARE LICENSE TERMS 1.0</name>
-            <url>http://www.rnkrsoft.com/open-source-licenses</url>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
     <scm>
