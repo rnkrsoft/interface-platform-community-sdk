@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
     <groupId>com.rnkrsoft.platform</groupId>
     <artifactId>interface-platform-sdk</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.3-fix1</version>
     <name>接口平台SDK</name>
     <properties>
         <maven.compiler.target>1.6</maven.compiler.target>
@@ -279,7 +279,7 @@
             <dependency>
                 <groupId>com.rnkrsoft.platform</groupId>
                 <artifactId>interface-platform-protocol</artifactId>
-                <version>${project.version}</version>
+                <version>1.0.3</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

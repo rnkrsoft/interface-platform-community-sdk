@@ -207,19 +207,20 @@ import com.rnkrsoft.platform.InterfaceContext;
 
 /**
  * Created by rnkrsoft.com on 2018/6/23.
+ * 数据格式转换服务
  */
 public interface ConvertService {
     /**
-     * 编码
-     * @param ctx
-     * @return
+     * 用于将内部格式编码成外部格式
+     * @param ctx 上下文
+     * @return 转换成功返回真
      */
     boolean code(InterfaceContext ctx);
 
     /**
-     * 解码
-     * @param ctx
-     * @return
+     * 用于将外部格式编码为内部格式
+     * @param ctx 上下文
+     * @return 转换成功返回真
      */
     boolean decode(InterfaceContext ctx);
 }

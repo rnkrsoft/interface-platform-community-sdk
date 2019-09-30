@@ -332,7 +332,7 @@ public class ApiController {
             MDC.remove(SESSION_ID);
             return "malicious attack, firewall rejected!";
         }
-        log.info("request json:{}", request.getSessionId(), json);
+        log.info("request json:{}", json);
         if (StringUtils.isBlank(request.getTimestamp())) {
             response.setCode(InterfaceRspCode.PARAM_IS_NULL);
             String rspJson = GSON.toJson(response);

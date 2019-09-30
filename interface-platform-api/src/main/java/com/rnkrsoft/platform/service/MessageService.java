@@ -212,9 +212,9 @@ import com.rnkrsoft.platform.enums.WriteModeEnum;
 
 import java.util.Date;
 
-
 /**
  * Created by rnkrsoft.com on 2018/6/21.
+ * 消息服务，用于对报文进行持久化
  */
 public interface MessageService {
     /**
@@ -314,8 +314,12 @@ public interface MessageService {
      * @param orderStatus       修改订单状态
      * @return 影响记录条数
      */
-    long updateRequestStatus(InterfaceContext context, WriteModeEnum writeOrderMode, String requestNo, OrderStatusEnum expectOrderStatus, OrderStatusEnum orderStatus);
-    /**
+    long updateRequestStatus(InterfaceContext context, 
+	    						WriteModeEnum writeOrderMode, 
+	    						String requestNo, 
+	    						OrderStatusEnum expectOrderStatus, 
+	    						OrderStatusEnum orderStatus);
+	/**
      * 更新订单状态和应答订单号
      *
      * @param writeOrderMode    写入模式
@@ -325,7 +329,12 @@ public interface MessageService {
      * @param responseNo        应答订单号
      * @return 影响记录条数
      */
-    long updateRequestStatus(InterfaceContext context, WriteModeEnum writeOrderMode, String requestNo, OrderStatusEnum expectOrderStatus, OrderStatusEnum orderStatus, String responseNo);
+    long updateRequestStatus(InterfaceContext context, 
+	    						WriteModeEnum writeOrderMode, 
+	    						String requestNo, 
+	    						OrderStatusEnum expectOrderStatus, 
+	    						OrderStatusEnum orderStatus, 
+	    						String responseNo);
     /**
      * 根据会话号查询请求订单物理主键
      *
@@ -333,5 +342,7 @@ public interface MessageService {
      * @param expectOrderStatus 期望订单状态
      * @return 请求订单物理主键
      */
-    String queryRequestBySessionId(InterfaceContext context, String sessionId, OrderStatusEnum expectOrderStatus);
+    String queryRequestBySessionId(InterfaceContext context, 
+    								String sessionId, 
+    								OrderStatusEnum expectOrderStatus);
 }
