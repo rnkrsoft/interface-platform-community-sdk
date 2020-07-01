@@ -27,7 +27,7 @@
         <commons-dbcp.version>1.2.2</commons-dbcp.version>
         <gson.version>2.6.2</gson.version>
         <mybatis.version>3.3.0</mybatis.version>
-        <mysql-connector-java.version>6.0.6</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.16</mysql-connector-java.version>
         <framework.version>1.0.2</framework.version>
         <logger4j.version>1.0.0</logger4j.version>
     </properties>
